@@ -57,3 +57,18 @@ function parallaxbubbles(){
 window.addEventListener('scroll', function(){ // on page scroll
  requestAnimationFrame(parallaxbubbles) // call parallaxbubbles() on next available screen paint
 }, false)
+
+$( "#foo" ).on( "custom", function( event, param1, param2 ) {
+  alert( param1 + "\n" + param2 );
+});
+$( "#foo").trigger( "custom", [ "Custom", "Event" ] );
+
+$( "button:first" ).click(function() {
+  update( $( "span:first" ) );
+});
+ 
+ 
+function update( j ) {
+  var n = parseInt( j.text(), 10 );
+  j.text( n + 1 );
+}
